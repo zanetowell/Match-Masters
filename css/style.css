@@ -1,0 +1,58 @@
+body{
+    
+}
+header{
+    display: flex;
+    background-color: aliceblue;
+    height: 25%;
+    justify-content: center;
+
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
+/* main{
+    display:flex;
+    width:30%;
+    margin: auto;
+} */
+.game-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    gap: 10px;
+    max-width: 800px;
+    margin: auto;
+}
+.card-fronts {
+    display: grid;
+    grid-template-columns: repeat(4, 160px);
+    grid-template-rows: repeat(3, 160px);
+    grid-gap: 10px;
+    background-color: green;
+  }
+/* .card-backs{
+        display: grid;
+        grid-template-columns: repeat(4, 160px);
+        grid-template-rows: repeat(3, 160px);
+        grid-gap: 10px;
+} */
+.card-back{
+
+}
+aside {
+    background-color: antiquewhite;
+    display: inline-flex;
+    width: 15%;
+    height: 75%;
+    float: left;
+
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
