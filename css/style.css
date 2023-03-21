@@ -1,9 +1,8 @@
 body{
-    
+    background-image: url("https://wallup.net/wp-content/uploads/2016/05/24/143432-nature-Pokemon.jpg");
 }
 header{
     display: flex;
-    background-color: aliceblue;
     height: 25%;
     justify-content: center;
 
@@ -31,7 +30,10 @@ h2{
     grid-template-columns: repeat(4, 160px);
     grid-template-rows: repeat(3, 160px);
     grid-gap: 10px;
-    background-color: green;
+    /* background-color: green; */
+  }
+  .card-fronts button {
+    background-color: lightgreen;
   }
 /* .card-backs{
         display: grid;
@@ -42,6 +44,7 @@ h2{
 .card-back{
 
 }
+
 aside {
     background-color: antiquewhite;
     display: inline-flex;

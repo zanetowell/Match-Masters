@@ -20,7 +20,7 @@ const $pokemon3 = $
 const $pokemon4 = $
 const $pokemon5 = $
 const $pokemon6 = $
-let allPokemon 
+let allPokemon = []
 let $card1
 let $card2
 let $card3
@@ -40,78 +40,78 @@ $('form').on('submit', handleGetData)
 
 function handleGetData(event) {
     event.preventDefault();
-    // userInput = $input.val();
+    userInput = $input.val();
     $.ajax({
-        url:`https://pokeapi.co/api/v2/pokemon/bulbasaur/`
+        url:`https://pokeapi.co/api/v2/pokemon/${userInput}/`
       }).then(
         (data) => {
-            console.log(data);
-         pokeData1 = data;
+         allPokemon.push(data)
+         console.log(allPokemon);
         },
         (error) => {
          console.log('bad request', error);
         }
     );    
     // Request for 2nd pokemon
-    $.ajax({
-        url:`https://pokeapi.co/api/v2/pokemon/charmander/`
-      }).then(
-        (data) => {
-            console.log(data);
-         pokeData2 = data;
-        },
-        (error) => {
-         console.log('bad request', error);
-        }
-    );  
-    // 3rd pokemon
-    $.ajax({
-        url:`https://pokeapi.co/api/v2/pokemon/squirtle/`
-      }).then(
-        (data) => {
-            console.log(data);
-         pokeData3 = data;
-        },
-        (error) => {
-         console.log('bad request', error);
-        }
-    );  
-    // 4th pokemon
-    $.ajax({
-        url:`https://pokeapi.co/api/v2/pokemon/pikachu/`
-      }).then(
-        (data) => {
-            console.log(data);
-         pokeData4 = data;
-        },
-        (error) => {
-         console.log('bad request', error);
-        }
-    );  
-    // 5th pokemon
-    $.ajax({
-        url:`https://pokeapi.co/api/v2/pokemon/ditto/`
-      }).then(
-        (data) => {
-            console.log(data);
-         pokeData5 = data;
-        },
-        (error) => {
-         console.log('bad request', error);
-        }
-    );  
-    // 6th pokemon
-    $.ajax({
-        url:`https://pokeapi.co/api/v2/pokemon/mew/`
-      }).then(
-        (data) => {
-            console.log(data);
-         pokeData6 = data;
-        },
-        (error) => {
-         console.log('bad request', error);
-        }
-    );  allPokemon = {pokeData1, pokeData2, pokeData3, pokeData4, pokeData5, pokeData6}
+    // $.ajax({
+    //     url:`https://pokeapi.co/api/v2/pokemon/charmander/`
+    //   }).then(
+    //     (data) => {
+    //         console.log(data);
+    //      pokeData2 = data;
+    //     },
+    //     (error) => {
+    //      console.log('bad request', error);
+    //     }
+    // );  
+    // // 3rd pokemon
+    // $.ajax({
+    //     url:`https://pokeapi.co/api/v2/pokemon/squirtle/`
+    //   }).then(
+    //     (data) => {
+    //         console.log(data);
+    //      pokeData3 = data;
+    //     },
+    //     (error) => {
+    //      console.log('bad request', error);
+    //     }
+    // );  
+    // // 4th pokemon
+    // $.ajax({
+    //     url:`https://pokeapi.co/api/v2/pokemon/pikachu/`
+    //   }).then(
+    //     (data) => {
+    //         console.log(data);
+    //      pokeData4 = data;
+    //     },
+    //     (error) => {
+    //      console.log('bad request', error);
+    //     }
+    // );  
+    // // 5th pokemon
+    // $.ajax({
+    //     url:`https://pokeapi.co/api/v2/pokemon/ditto/`
+    //   }).then(
+    //     (data) => {
+    //         console.log(data);
+    //      pokeData5 = data;
+    //     },
+    //     (error) => {
+    //      console.log('bad request', error);
+    //     }
+    // );  
+    // // 6th pokemon
+    // $.ajax({
+    //     url:`https://pokeapi.co/api/v2/pokemon/mew/`
+    //   }).then(
+    //     (data) => {
+    //         console.log(data);
+    //      pokeData6 = data;
+    //     },
+    //     (error) => {
+    //      console.log('bad request', error);
+    //     }
+    // );  
 }
 function frontToBack() {
     $(this).removeClass('card-front')
@@ -121,12 +121,10 @@ function backToFront() {
     $(this).removeClass('card-back')
     $(this).addClass('card-front')
 }
-$('button').click(function () {
+$('#start-btn').click(function () {
     console.log($(this));
     if ($(this)[0].className === 'card-front') {
         $(this).removeClass('card-front')
-    } else {
-        $(this).addClass('card-front')
-    }
-
+        .addClass('card-back')  
+    } 
 })
