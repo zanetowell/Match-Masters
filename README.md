@@ -6,7 +6,10 @@ Allows user to play a card matching memory game. Pulls pokemon names and sprites
 
 ## Techonologies used
 
-1.HTML
-2.CSS
-3.JavaScript/Jquery/AJAX
-4.Pokemon API (https://pokeapi.co/api/v2/pokemon/{id or name}/)
+1.HTML  
+
+2.CSS  
+
+3.JavaScript/Jquery/AJAX  
+
+4.Pokemon API  

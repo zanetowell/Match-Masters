@@ -16,7 +16,7 @@ h2{
     width:30%;
     margin: auto;
 } */
-.game-cards{
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,33 +25,41 @@ h2{
     max-width: 800px;
     margin: auto;
 }
-.card-fronts {
+.game-cards {
     display: grid;
     grid-template-columns: repeat(4, 160px);
     grid-template-rows: repeat(3, 160px);
     grid-gap: 10px;
-    /* background-color: green; */
+    
   }
-  .card-fronts button {
+  .card {
     background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgb(100, 100, 100);
+    border-radius: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: hidden;
   }
-/* .card-backs{
-        display: grid;
-        grid-template-columns: repeat(4, 160px);
-        grid-template-rows: repeat(3, 160px);
-        grid-gap: 10px;
-} */
-.card-back{
-
-}
+  .card-back, .card-front{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+  }
 
 aside {
-    background-color: antiquewhite;
-    display: inline-flex;
-    width: 15%;
-    height: 75%;
-    float: left;
-
+    background-color: rgba(92, 148, 238, 0.1);
+    position: absolute;
+    width: 25vh;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
 
 form{
