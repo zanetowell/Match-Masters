@@ -1,6 +1,6 @@
-# Match Masters
+# Poke Library
 
-Allows user to play a card matching memory game. Pulls pokemon names and sprites from API.
+App that allows users to search for any pokemon and see its type, id, and base stats.  
 
 ## Created by: Zane Towell
 

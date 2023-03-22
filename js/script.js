@@ -1,50 +1,43 @@
-// let pokeData1, pokeData2, pokeData3, pokeData4, pokeData5, pokeData6
-const $matches = 0
-const $firstPick = ''
-const $secondPick = ''
-const $cards = $('.game-cards')
-// let pokeData1 = $.map(allPokemon[0], function (value, key) {
-//     return key
-// })
-// const $pokeName1 = $('#name1')
-// const $pokeSprite1 = $('#sprite1')
-// const $pokemon2 = $('#pokemon2')
-// const $pokemon3 = $('#pokemon3')
-// const $pokemon4 = $('#pokemon4')
-// const $pokemon5 = $('#pokemon5')
-// const $pokemon6 = $('#pokemon6')
-let allPokemon = []
-let myImg 
-// let $card1
-// let $card2
-// let $card3
-// let $card4
-// let $card5
-// let $card6
-// let $card7
-// let $card8
-// let $card9
-// let $card10
-// let $card11
-// let $card12
-
-const displayPokemon = (allPokemon) => {
-    allPokemon.sort( _ => Math.random() - 0.5);
-    const pokemonHTML = allPokemon.map(allPokemon => {
-    return `
-            <div class ="card">
-                <h2>${allPokemon.name}
-            </div>
-        `
-    }).join('');
-    $('.game-cards').innerHTML = pokemonHTML;
-
-}
+// Info for currently searched pokemon
+let $mainName = $('.poke-name')
+let $mainSprite = $('.poke-sprite')
+let $mainType = $('.poke-type')
+let $mainId = $('.poke-id')
+let $hp = $('.hp')
+let $attack = $('.attack')
+let $defense = $('.defense')
+let $specialAttack = $('.special-attack')
+let $specialDefense = $('.special-defense')
+let $speed = $('.speed')
+// info for party member 1
+let $sprite1 = $('.sprite1')
+let $name1 = $('.name1')
+let $type1 = $('.type1')
+// info for party member 2
+let $sprite2 = $('.sprite2')
+let $name2 = $('.name2')
+let $type2 = $('.type2')
+// info for party member 3
+let $sprite3 = $('.sprite3')
+let $name3 = $('.name3')
+let $type3 = $('.type3')
+// info for party member 4
+let $sprite4 = $('.sprite4')
+let $name4 = $('.name4')
+let $type4 = $('.type4')
+// info for party member 5
+let $sprite5 = $('.sprite5')
+let $name5 = $('.name5')
+let $type5 = $('.type5')
+// info for party member 6
+let $sprite6 = $('.sprite6')
+let $name6 = $('.name6')
+let $type6 = $('.type6')
 
 const $input = $('input[type="text"]')
 
 $('form').on('submit', handleGetData)
-
+// Call to API
 function handleGetData(event) {
     event.preventDefault();
     userInput = $input.val();
@@ -52,78 +45,31 @@ function handleGetData(event) {
         url:`https://pokeapi.co/api/v2/pokemon/${userInput}/`
       }).then(
         (data) => {
-         allPokemon.push(data)
-        //  createPartyMember()
-         console.log(allPokemon[0].sprites.front_default);
+            pokeData = data
+            console.log(pokeData);
+            showPokemon()
         },
         (error) => {
          console.log('bad request', error);
         }
     )
 }
-// function frontToBack() {
-//     $(this).removeClass('card-front')
-//     $(this).addClass('card-back')
-// }
-// function backToFront() {
-//     $(this).removeClass('card-back')
-//     $(this).addClass('card-front')
-// }
-// $('.card-front').click(function () {
-//     console.log($(this));
-//     if ($(this)[0].className === 'card-front') {
-//         $(this).removeClass('card-front')
-//         .addClass('card-back')
-//     } 
-// })
-
-const clickCard = (e) => {
-    const pokemonCard = e.currentTarget
-    const pokemonName = pokemonCard.dataset.pokename
+// Function that displays searched pokemons info
+function showPokemon() {
+    let newSprite = pokeData.sprites.front_default
+    $mainName.text(pokeData.name)
+    $mainSprite.attr('src', `${newSprite}`)
+    $mainType.text(`Type: ${(pokeData.types[0].type.name)}`)
+    $mainId.text(`ID Number: ${(pokeData.id)}`)
+    $hp.text(`HP: ${(pokeData.stats[0].base_stat)}`)
+    $attack.text(`Attack: ${(pokeData.stats[1].base_stat)}`)
+    $defense.text(`Defense: ${(pokeData.stats[2].base_stat)}`)
+    $specialAttack.text(`Special Attack: ${(pokeData.stats[3].base_stat)}`)
+    $specialDefense.text(`Special Defense: ${(pokeData.stats[4].base_stat)}`)
+    $speed.text(`Speed: ${(pokeData.stats[5].base_stat)}`)
+    console.log(newSprite);
 }
 
-
-
-function render() {
-    $pokeName1.text(allPokemon[0].name)
-    $pokeSprite1.src(allPokemon[0].sprites.default_front)
-
-}
-
-$('#start-btn').click(function () {
-    displayPokemon()
-})
-
-function createPartyMember() {
-    const $newMember = $(
-        `<h4>${allPokemon.shift().name}</h4>
-        
-        `
-    )
-    $('#party-pokemon').append($newMember)
-
-}
-
-function shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex
-    while (currentIndex !==0) {
-        randomIndex = Math.floor(Math.random() * currentIndex)
-        currentIndex -=1
-        temporaryValue = array[currentIndex]
-        array[currentIndex] = array[randomIndex]
-        array[randomIndex] = temporaryValue
-    }
-    return array
-}
-
-function startGame() {
-    let pokemonCards = shuffle(allPokemon)
-    $cards.empty()
-    $matches = 0
-
-    for (let i = 0; i < pokemonCards.length; i++) {
-        $cards.append($`<div class="back-rotated"><img src="${pokemonCards.sprites.front_default}`)
-        
-    }
+function addToParty() {
     
 }
