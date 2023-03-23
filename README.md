@@ -16,9 +16,9 @@ App that allows users to search for any pokemon and see its type, id, and base s
 
 ## Screenshots  
 
-![View of the app as soon as you open it]!(https://cdn.discordapp.com/attachments/1070216691415531520/1088495009717829693/Screenshot_2023-03-23_at_12.06.02_PM.png)  
+![View of the app as soon as you open it](https://cdn.discordapp.com/attachments/1070216691415531520/1088495009717829693/Screenshot_2023-03-23_at_12.06.02_PM.png)  
 
-![View of the app in use]!(https://cdn.discordapp.com/attachments/1070216691415531520/1088495039577079948/Screenshot_2023-03-23_at_12.07.09_PM.png)  
+![View of the app in use](https://cdn.discordapp.com/attachments/1070216691415531520/1088495039577079948/Screenshot_2023-03-23_at_12.07.09_PM.png)  
 
 ## Getting Started  
 
