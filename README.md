@@ -22,7 +22,12 @@ App that allows users to search for any pokemon and see its type, id, and base s
 
 ## Getting Started  
 
-link  
+Search the name of any pokemon to see its stats.  
+
+Click the buttons on the left to add the currently searched pokemon to your party.  
+
+
+[Deployed Project](https://641c88ea083ac200c7542463--gorgeous-cupcake-e5f01f.netlify.app/)  
 
 ## Future Enhancements  
 
