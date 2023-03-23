@@ -1,4 +1,5 @@
 // Info for currently searched pokemon
+let pokeData
 let $mainName = $('.poke-name')
 let $mainSprite = $('.poke-sprite')
 let $mainType = $('.poke-type')
@@ -10,29 +11,29 @@ let $specialAttack = $('.special-attack')
 let $specialDefense = $('.special-defense')
 let $speed = $('.speed')
 // info for party member 1
-let $sprite1 = $('.sprite1')
-let $name1 = $('.name1')
-let $type1 = $('.type1')
+let $sprite1 = $('#sprite1')
+let $name1 = $('#name1')
+let $type1 = $('#type1')
 // info for party member 2
-let $sprite2 = $('.sprite2')
-let $name2 = $('.name2')
-let $type2 = $('.type2')
+let $sprite2 = $('#sprite2')
+let $name2 = $('#name2')
+let $type2 = $('#type2')
 // info for party member 3
-let $sprite3 = $('.sprite3')
-let $name3 = $('.name3')
-let $type3 = $('.type3')
+let $sprite3 = $('#sprite3')
+let $name3 = $('#name3')
+let $type3 = $('#type3')
 // info for party member 4
-let $sprite4 = $('.sprite4')
-let $name4 = $('.name4')
-let $type4 = $('.type4')
+let $sprite4 = $('#sprite4')
+let $name4 = $('#name4')
+let $type4 = $('#type4')
 // info for party member 5
-let $sprite5 = $('.sprite5')
-let $name5 = $('.name5')
-let $type5 = $('.type5')
+let $sprite5 = $('#sprite5')
+let $name5 = $('#name5')
+let $type5 = $('#type5')
 // info for party member 6
-let $sprite6 = $('.sprite6')
-let $name6 = $('.name6')
-let $type6 = $('.type6')
+let $sprite6 = $('#sprite6')
+let $name6 = $('#name6')
+let $type6 = $('#type6')
 
 const $input = $('input[type="text"]')
 
@@ -69,7 +70,57 @@ function showPokemon() {
     $speed.text(`Speed: ${(pokeData.stats[5].base_stat)}`)
     console.log(newSprite);
 }
-
-function addToParty() {
-    
+// Adding pokemon to party
+function addToParty1() {
+    let newPartyMember = pokeData
+    console.log(newPartyMember);
+    $sprite1.attr('src', `${(newPartyMember.sprites.front_default)}`)
+    $name1.text(pokeData.name)
+    $('.party-btn1').css('display', 'none')
 }
+$('.party-btn1').on('click', addToParty1)
+
+function addToParty2() {
+    let newPartyMember = pokeData
+    console.log(newPartyMember);
+    $sprite2.attr('src', `${(newPartyMember.sprites.front_default)}`)
+    $name2.text(pokeData.name)
+    $('.party-btn2').css('display', 'none')
+}
+$('.party-btn2').on('click', addToParty2)
+
+function addToParty3() {
+    let newPartyMember = pokeData
+    console.log(newPartyMember);
+    $sprite3.attr('src', `${(newPartyMember.sprites.front_default)}`)
+    $name3.text(pokeData.name)
+    $('.party-btn3').css('display', 'none')
+}
+$('.party-btn3').on('click', addToParty3)
+
+function addToParty4() {
+    let newPartyMember = pokeData
+    console.log(newPartyMember);
+    $sprite4.attr('src', `${(newPartyMember.sprites.front_default)}`)
+    $name4.text(pokeData.name)
+    $('.party-btn4').css('display', 'none')
+}
+$('.party-btn4').on('click', addToParty4)
+
+function addToParty5() {
+    let newPartyMember = pokeData
+    console.log(newPartyMember);
+    $sprite5.attr('src', `${(newPartyMember.sprites.front_default)}`)
+    $name5.text(pokeData.name)
+    $('.party-btn5').css('display', 'none')
+}
+$('.party-btn5').on('click', addToParty5)
+
+function addToParty6() {
+    let newPartyMember = pokeData
+    console.log(newPartyMember);
+    $sprite6.attr('src', `${(newPartyMember.sprites.front_default)}`)
+    $name6.text(pokeData.name)
+    $('.party-btn6').css('display', 'none')
+}
+$('.party-btn6').on('click', addToParty6)
