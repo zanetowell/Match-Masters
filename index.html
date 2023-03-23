@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Source+Serif+Pro&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script defer src="./js/script.js"></script>
@@ -16,9 +16,10 @@
     <img src ="https://cdn.discordapp.com/attachments/1070216691415531520/1088207152088350791/fENdHAQpQgAIUuJQEGMS6lO4290oBClCAAhSgAAUoQAEKUIACFKAABS5NATMAybCyX5rb564pQAEKUIACHVOAQayOed4agpQgAIUoAAFKEABClCAAhSgAAUoQAEKUIACFKAABSjQqQUYxOrUt5ebowAFKEABClCAAhSgAAUoQAEKUIACFKAABShAAQpQgAIdU4BBrI5537hqClCAAhSgAAUoQAEKUIACFKAABShAAQpQgAIUoAAFKNCpBf4f0Aegz05XRNMAAAAASUVORK5CYII.png">
 </header>
 <body>
-<h2></h2>
+    <h2>Search for your favorite Pokemon and then click the buttons on the left to add them to your party!</h2>
     <main>
         <div class="container">
+            <p class="error-msg" display="none">Pokemon not found! Try again!</p>
             <div class="card">
                 <div class="main-pokemon">
                     <img src="" class="poke-sprite">
@@ -36,10 +37,11 @@
                         <p class="speed"></p>
                     </div>
                 </div>
+                <button type ="button" class="get-random">Random Pokemon</button>
             </div>
         </div>
     </main>
-    <aside>
+    <aside class="sidebar">
       <div class = "party">
         <h2>Party</h2>
         <div id="pokemon1">
@@ -47,36 +49,42 @@
             <p id="name1"></p>
             <p id="type1"></p>
             <button class="party-btn1" value="1">Add To Party</button>
+            <button class="rmv-btn1" value="1">Remove From Party</button>
         </div>
         <div id="pokemon2">
             <img src="" id="sprite2">
             <p id="name2"></p>
             <p id="type2"></p>
             <button class="party-btn2" value="2">Add To Party</button>
+            <button class="rmv-btn2" value="2">Remove From Party</button>
         </div>
         <div id="pokemon3">
             <img src="" id="sprite3">
             <p id="name3"></p>
             <p id="type3"></p>
             <button class="party-btn3" value="3">Add To Party</button>
+            <button class="rmv-btn3" value="3">Remove From Party</button>
         </div>
         <div id="pokemon4">
             <img src="" id="sprite4">
             <p id="name4"></p>
             <p id="type4"></p>
             <button class="party-btn4" value="4">Add To Party</button>
+            <button class="rmv-btn4" value="4">Remove From Party</button>
         </div>
         <div id="pokemon5">
             <img src="" id="sprite5">
             <p id="name5"></p>
             <p id="type5"></p>
             <button class="party-btn5" value="5">Add To Party</button>
+            <button class="rmv-btn5" value="5">Remove From Party</button>
         </div>
         <div id="pokemon6">
             <img src="" id="sprite6">
             <p id="name6"></p>
             <p id="type6"></p>
             <button class="party-btn6" value="6">Add To Party</button>
+            <button class="rmv-btn6" value="6">Remove From Party</button>
         </div>
       </div>
     </aside>

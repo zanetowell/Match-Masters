@@ -1,6 +1,6 @@
 body{
     background-image: url("https://wallup.net/wp-content/uploads/2016/05/24/143432-nature-Pokemon.jpg");
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 header{
@@ -12,6 +12,7 @@ header{
 h2{
     display: flex;
     justify-content: center;
+    font-weight: bolder;
 }
 
 h3{
@@ -36,10 +37,21 @@ h3{
 }
 
 .main-pokemon{
+    font-family: 'Nunito', sans-serif;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 10px;}
+    grid-column-gap: 10px;
+    background-color: rgba(242, 249, 248, .3);
+    width: 55vw;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.main-pokemon img{
+    height: 100%;
+}
 
 .poke-info{
     grid-area: 1 / 2 / 2 / 3;
@@ -50,11 +62,12 @@ h3{
 }
 
 aside{
+    font-family: 'Nunito', sans-serif;
     display: flex; 
     background-color: rgba(92, 148, 238, 0.3);
-    position: absolute;
+    position: fixed;
     width: 25vh;
-    height: 100vh;
+    height: 100%;
     top: 0;
     left: 0;
 }
@@ -72,8 +85,11 @@ aside{
 .party p{
     text-transform: capitalize;
     font-weight: bold;
-    align-items: right;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+
 }
 
 .party div{
@@ -87,13 +103,18 @@ aside{
 aside h2{
     display: flex;
     position: relative;
-    text-decoration: underline;
-    color: #404c52;
     margin: 0;
+    font-size: 30px;
+    background-color: rgba(242, 249, 248, .3);
+    align-items: stretch;
+    border-radius: 5px;
+    border-bottom: 3px solid;
+    border-right: 3px solid;
 }
 
 aside button{
     border-radius: 5px;
+    cursor: pointer;
 }
 
 form{
@@ -104,11 +125,39 @@ form{
 
 #search-bar{
     display: flex;
-    border: white;
+    border: 2px solid white;
     border-radius: 5px;
+
 }
 
 #search-btn{
     background-color: aliceblue;
+    border: 2px solid;
     border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.error-msg{
+    display: none;
+    background-color: white;
+    margin: 0 auto;
+    justify-content: center;
+    width: 20vw;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+.get-random{
+    display: flex;
+    bottom: 0;
+    margin:  10px auto;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
 }

@@ -49,12 +49,44 @@ function handleGetData(event) {
             pokeData = data
             console.log(pokeData);
             showPokemon()
+            $('.error-msg').css('display', 'none')
         },
         (error) => {
          console.log('bad request', error);
+         $('.error-msg').css('display', 'flex')
         }
     )
 }
+// Function to get a random pokemon
+function getRandomPokemon(min, max) {
+    min = Math.ceil(1);
+    max = Math.floor(1010);
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+$('.get-random').click(handleGetRandomData)
+
+function handleGetRandomData(event) {
+    event.preventDefault();
+    let randomPokemon = getRandomPokemon();
+    $.ajax({
+        url:`https://pokeapi.co/api/v2/pokemon/${randomPokemon}/`
+      }).then(
+        (data) => {
+            pokeData = data
+            console.log(pokeData);
+            showPokemon()
+            $('.error-msg').css('display', 'none')
+        },
+        (error) => {
+         console.log('bad request', error);
+         $('.error-msg').css('display', 'flex')
+        }
+    )
+}
+
+
+
 // Function that displays searched pokemons info
 function showPokemon() {
     let newSprite = pokeData.sprites.front_default
@@ -77,6 +109,7 @@ function addToParty1() {
     $sprite1.attr('src', `${(newPartyMember.sprites.front_default)}`)
     $name1.text(pokeData.name)
     $('.party-btn1').css('display', 'none')
+    $('.rmv-btn1').css('display', '')
 }
 $('.party-btn1').on('click', addToParty1)
 
@@ -124,3 +157,52 @@ function addToParty6() {
     $('.party-btn6').css('display', 'none')
 }
 $('.party-btn6').on('click', addToParty6)
+
+// Removing pokemon from party
+function removeFromParty1() {
+    $sprite1.attr('src', '')
+    $name1.text('')
+    $('.rmv-btn1').css('display', 'none')
+    $('.party-btn1').css('display', '')
+}
+$('.rmv-btn1').click(removeFromParty1)
+
+function removeFromParty2() {
+    $sprite2.attr('src', '')
+    $name2.text('')
+    $('.rmv-btn2').css('display', 'none')
+    $('.party-btn2').css('display', '')
+}
+$('.rmv-btn2').click(removeFromParty2)
+
+function removeFromParty3() {
+    $sprite3.attr('src', '')
+    $name3.text('')
+    $('.rmv-btn3').css('display', 'none')
+    $('.party-btn3').css('display', '')
+}
+$('.rmv-btn3').click(removeFromParty3)
+
+function removeFromParty4() {
+    $sprite4.attr('src', '')
+    $name4.text('')
+    $('.rmv-btn4').css('display', 'none')
+    $('.party-btn4').css('display', '')
+}
+$('.rmv-btn4').click(removeFromParty4)
+
+function removeFromParty5() {
+    $sprite5.attr('src', '')
+    $name5.text('')
+    $('.rmv-btn5').css('display', 'none')
+    $('.party-btn5').css('display', '')
+}
+$('.rmv-btn5').click(removeFromParty5)
+
+function removeFromParty6() {
+    $sprite6.attr('src', '')
+    $name6.text('')
+    $('.rmv-btn6').css('display', 'none')
+    $('.party-btn6').css('display', '')
+}
+$('.rmv-btn6').click(removeFromParty6)
