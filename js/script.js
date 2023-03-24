@@ -35,13 +35,13 @@ let $sprite6 = $('#sprite6')
 let $name6 = $('#name6')
 let $type6 = $('#type6')
 
-const $input = $('input[type="text"]')
+const $input = $(`input[type="text"]`)
 
 $('form').on('submit', handleGetData)
 // Call to API
 function handleGetData(event) {
     event.preventDefault();
-    userInput = $input.val();
+    userInput = $input.val().toLowerCase();
     $.ajax({
         url:`https://pokeapi.co/api/v2/pokemon/${userInput}/`
       }).then(
@@ -109,7 +109,7 @@ function addToParty1() {
     $sprite1.attr('src', `${(newPartyMember.sprites.front_default)}`)
     $name1.text(pokeData.name)
     $('.party-btn1').css('display', 'none')
-    $('.rmv-btn1').css('display', '')
+    $('.rmv-btn1').css('display', 'flex')
 }
 $('.party-btn1').on('click', addToParty1)
 
@@ -119,6 +119,7 @@ function addToParty2() {
     $sprite2.attr('src', `${(newPartyMember.sprites.front_default)}`)
     $name2.text(pokeData.name)
     $('.party-btn2').css('display', 'none')
+    $('.rmv-btn2').css('display', 'flex')
 }
 $('.party-btn2').on('click', addToParty2)
 
@@ -128,6 +129,7 @@ function addToParty3() {
     $sprite3.attr('src', `${(newPartyMember.sprites.front_default)}`)
     $name3.text(pokeData.name)
     $('.party-btn3').css('display', 'none')
+    $('.rmv-btn3').css('display', 'flex')
 }
 $('.party-btn3').on('click', addToParty3)
 
@@ -137,6 +139,7 @@ function addToParty4() {
     $sprite4.attr('src', `${(newPartyMember.sprites.front_default)}`)
     $name4.text(pokeData.name)
     $('.party-btn4').css('display', 'none')
+    $('.rmv-btn4').css('display', 'flex')
 }
 $('.party-btn4').on('click', addToParty4)
 
@@ -146,6 +149,7 @@ function addToParty5() {
     $sprite5.attr('src', `${(newPartyMember.sprites.front_default)}`)
     $name5.text(pokeData.name)
     $('.party-btn5').css('display', 'none')
+    $('.rmv-btn5').css('display', 'flex')
 }
 $('.party-btn5').on('click', addToParty5)
 
@@ -155,6 +159,7 @@ function addToParty6() {
     $sprite6.attr('src', `${(newPartyMember.sprites.front_default)}`)
     $name6.text(pokeData.name)
     $('.party-btn6').css('display', 'none')
+    $('.rmv-btn6').css('display', 'flex')
 }
 $('.party-btn6').on('click', addToParty6)
 

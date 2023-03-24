@@ -161,3 +161,27 @@ form{
     padding: 10px;
     cursor: pointer;
 }
+
+.rmv-btn1{
+    display: none;
+}
+
+.rmv-btn2{
+    display: none;
+}
+
+.rmv-btn3{
+    display: none;
+}
+
+.rmv-btn4{
+    display: none;
+}
+
+.rmv-btn5{
+    display: none;
+}
+
+.rmv-btn6{
+    display: none;
+}
